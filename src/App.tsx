@@ -427,50 +427,6 @@ function TestimonialCard({ name, role, content, avatar }: TestimonialCardProps) 
   );
 }
 
-interface AppScreenshotProps {
-  title: string;
-  description: string;
-  imagePath: string;
-}
-
-function AppScreenshot({ title, description, imagePath }: AppScreenshotProps) {
-  return (
-    <div className="group animate-fade-in-up">
-      <div className="bg-gradient-to-br from-red-100 to-green-100 rounded-3xl p-2 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
-        <div className="bg-white rounded-2xl overflow-hidden">
-          <div className="aspect-[9/16] relative bg-gray-100 flex items-center justify-center">
-            <img 
-              src={imagePath} 
-              alt={title}
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                // Fallback if image doesn't exist
-                const target = e.target as HTMLImageElement;
-                target.style.display = 'none';
-                const parent = target.parentElement;
-                if (parent) {
-                  parent.innerHTML = `
-                    <div class="flex flex-col items-center justify-center h-full text-gray-400">
-                      <svg class="w-20 h-20 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
-                      </svg>
-                      <p class="text-sm">Add your app screenshot here</p>
-                    </div>
-                  `;
-                }
-              }}
-            />
-          </div>
-        </div>
-      </div>
-      <div className="mt-6 text-center">
-        <h3 className="text-xl font-bold text-gray-900 mb-2">{title}</h3>
-        <p className="text-gray-600">{description}</p>
-      </div>
-    </div>
-  );
-}
-
 interface SocialIconProps {
   platform: 'twitter' | 'instagram' | 'facebook';
 }
