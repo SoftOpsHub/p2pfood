@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import logo from './assets/logo.png';
+
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -23,7 +25,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex justify-between items-center py-4">
             <div className="flex items-center gap-3">
-              <img src="/src/assets/logo.png" alt="P2PFood Logo" className="h-12 w-12 rounded-full" />
+              <img src={logo} alt="P2PFood Logo" className="h-12 w-12 rounded-full" />
               <h1 className="text-3xl font-bold bg-gradient-to-r from-red-600 to-green-600 bg-clip-text text-transparent">
                 P2PFood
               </h1>
@@ -98,9 +100,72 @@ function App() {
             </div>
           </div>
         </section>
+                {/* Key Features Section */}
+        <section id="features" className="py-20 bg-white/50">
+
+        <section className="py-20 bg-gradient-to-br from-orange-50 via-white to-red-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-4 text-gray-900">
+                <span className="text-5xl">🍽️</span> Key Features
+              </h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                Everything you need to share, discover, and enjoy homemade meals
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <KeyFeature 
+                icon="🏠"
+                title="Share Your Homemade Dishes"
+                description="Share your homemade dishes with nearby neighbors"
+              />
+              <KeyFeature 
+                icon="🔍"
+                title="Browse Local Meals"
+                description="Browse and order local home-cooked meals"
+              />
+              <KeyFeature 
+                icon="👨‍🍳"
+                title="Kitchen Profile"
+                description="Set up your own kitchen profile and menu"
+              />
+              <KeyFeature 
+                icon="💬"
+                title="Real-time Chat"
+                description="Real-time chat with food providers"
+              />
+              <KeyFeature 
+                icon="⭐"
+                title="Ratings & Trust"
+                description="Rate dishes and build community trust"
+              />
+              <KeyFeature 
+                icon="📍"
+                title="Location-Based Discovery"
+                description="Location-based discovery of nearby kitchens"
+              />
+              <KeyFeature 
+                icon="📦"
+                title="Order Tracking"
+                description="Order tracking and delivery options"
+              />
+              <KeyFeature 
+                icon="❤️"
+                title="Save Favorites"
+                description="Favorite dishes and kitchens"
+              />
+              <KeyFeature 
+                icon="💳"
+                title="Secure Payments"
+                description="Secure payment processing"
+              />
+            </div>
+          </div>
+        </section>
+       </section>
 
         {/* Features Section */}
-        <section id="features" className="py-20 bg-white/50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-4 text-gray-900">Why Choose P2PFood?</h2>
@@ -135,7 +200,6 @@ function App() {
               />
             </div>
           </div>
-        </section>
 
         {/* How It Works Section */}
         <section id="how-it-works" className="py-20">
@@ -281,7 +345,7 @@ function App() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center gap-3 mb-6">
-              <img src="/src/assets/logo.png" alt="P2PFood Logo" className="h-12 w-12 rounded-full" />
+              <img src={logo} alt="P2PFood Logo" className="h-12 w-12 rounded-full" />
                 <h1 className="text-3xl font-bold bg-gradient-to-r from-red-400 to-green-400 bg-clip-text text-transparent">
                   P2PFood
                 </h1>
@@ -303,24 +367,19 @@ function App() {
             <div>
               <h3 className="text-lg font-semibold mb-4">Legal</h3>
               <ul className="space-y-2">
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                <li><a href="/privacy" className="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                <li><a href="/terms" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
               </ul>
             </div>
             
             <div>
               <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-              <p className="text-gray-400 mb-2">hello@p2pfood.com</p>
-              <div className="flex gap-4 mt-4">
-                <SocialIcon platform="twitter" />
-                <SocialIcon platform="instagram" />
-                <SocialIcon platform="facebook" />
-              </div>
+              <p className="text-gray-400 mb-2">info@softopshub.com</p>
             </div>
           </div>
           
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
-            <p>&copy; 2026 P2PFood. All rights reserved. Made with ❤️ for food lovers everywhere.</p>
+            <p>&copy; 2026 P2PFood. All rights reserved.</p>
           </div>
         </div>
       </footer>
@@ -427,34 +486,22 @@ function TestimonialCard({ name, role, content, avatar }: TestimonialCardProps) 
   );
 }
 
-interface SocialIconProps {
-  platform: 'twitter' | 'instagram' | 'facebook';
+interface KeyFeatureProps {
+  icon: string;
+  title: string;
+  description: string;
 }
 
-function SocialIcon({ platform }: SocialIconProps) {
-  const icons = {
-    twitter: (
-      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.213c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
-      </svg>
-    ),
-    instagram: (
-      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-      </svg>
-    ),
-    facebook: (
-      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-      </svg>
-    ),
-  };
-
+function KeyFeature({ icon, title, description }: KeyFeatureProps) {
   return (
-    <a href="#" className="text-gray-400 hover:text-white transition-colors">
-      {icons[platform]}
-    </a>
+    <div className="group bg-white rounded-xl p-6 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
+      <div className="text-4xl mb-3 transform group-hover:scale-110 transition-transform duration-300">{icon}</div>
+      <h3 className="text-lg font-bold mb-2 text-gray-900">{title}</h3>
+      <p className="text-gray-600 text-sm leading-relaxed">{description}</p>
+    </div>
   );
 }
+
+
 
 export default App;
