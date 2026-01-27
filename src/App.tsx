@@ -17,11 +17,10 @@ function App() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-green-50 overflow-hidden">
       {/* Enhanced Header with Navigation */}
-      <header className={`transition-all duration-300 ${
-        scrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-lg' 
-          : 'bg-white/80 backdrop-blur-sm'
-      } border-b border-gray-200 sticky top-0 z-50`}>
+      <header className={`transition-all duration-300 ${scrolled
+        ? 'bg-white/95 backdrop-blur-md shadow-lg'
+        : 'bg-white/80 backdrop-blur-sm'
+        } border-b border-gray-200 sticky top-0 z-50`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex justify-between items-center py-4">
             <div className="flex items-center gap-3">
@@ -30,7 +29,7 @@ function App() {
                 P2PFood
               </h1>
             </div>
-            
+
             <div className="hidden md:flex items-center gap-8">
               <a href="#features" className="text-gray-700 hover:text-red-600 transition-colors font-medium">Features</a>
               <a href="#how-it-works" className="text-gray-700 hover:text-orange-600 transition-colors font-medium">How It Works</a>
@@ -61,13 +60,13 @@ function App() {
                 </span>
               </h1>
               <p className="text-xl sm:text-2xl text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed animate-fade-in-up animation-delay-200">
-                Connect with your neighbors to share homemade meals and reduce food waste. 
+                Connect with your neighbors to share homemade meals and reduce food waste.
                 Join the P2P food revolution today!
               </p>
-              
+
               {/* Download Buttons */}
               <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up animation-delay-400">
-                <DownloadButton 
+                <DownloadButton
                   platform="Google Play"
                   icon={
                     <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
@@ -77,8 +76,8 @@ function App() {
                   href="https://play.google.com/store/apps/details?id=com.p2pfood&hl=en"
                   color="from-green-500 to-green-600"
                 />
-                
-                <DownloadButton 
+
+                <DownloadButton
                   platform="App Store"
                   icon={
                     <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
@@ -89,117 +88,124 @@ function App() {
                   color="from-gray-800 to-black"
                 />
               </div>
-              
+
               {/* Stats Section */}
               <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-                <StatCard number="10K+" label="Meals Shared" />
-                <StatCard number="5K+" label="Happy Users" />
-                <StatCard number="2.5T" label="Food Saved" />
-                <StatCard number="50+" label="Cities" />
+                <StatCard number="🚀" label="Newly Launched" />
+                <StatCard number="🌱" label="Growing Community" />
+                <StatCard number="♻️" label="Mission: Reduce Food Waste" />
+                <StatCard number="🏙️" label="Starting in 1 City" />
               </div>
+
             </div>
           </div>
         </section>
-                {/* Key Features Section */}
+        {/* Key Features Section */}
         <section id="features" className="py-20 bg-white/50">
 
-        <section className="py-20 bg-gradient-to-br from-orange-50 via-white to-red-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-4 text-gray-900">
-                <span className="text-5xl">🍽️</span> Key Features
-              </h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Everything you need to share, discover, and enjoy homemade meals
-              </p>
+          <section className="py-20 bg-gradient-to-br from-orange-50 via-white to-red-50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl font-bold mb-4 text-gray-900">
+                  <span className="text-5xl">🍽️</span> Key Features
+                </h2>
+                <p className="text-gray-600 max-w-2xl mx-auto">
+                  Everything you need to share, discover, and enjoy homemade meals
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <KeyFeature
+                  icon="🏠"
+                  title="Share Your Homemade Dishes"
+                  description="Share your homemade dishes with nearby neighbors"
+                />
+                <KeyFeature
+                  icon="🔍"
+                  title="Browse Local Meals"
+                  description="Browse and order local home-cooked meals"
+                />
+                <KeyFeature
+                  icon="👨‍🍳"
+                  title="Kitchen Profile"
+                  description="Set up your own kitchen profile and menu"
+                />
+                <KeyFeature
+                  icon="💬"
+                  title="Real-time Chat"
+                  description="Real-time chat with food providers"
+                />
+                <KeyFeature
+                  icon="⭐"
+                  title="Ratings & Trust"
+                  description="Rate dishes and build community trust"
+                />
+                <KeyFeature
+                  icon="📍"
+                  title="Location-Based Discovery"
+                  description="Location-based discovery of nearby kitchens"
+                />
+                <KeyFeature
+                  icon="📦"
+                  title="Order Tracking"
+                  description="Order tracking and delivery options"
+                />
+                <KeyFeature
+                  icon="❤️"
+                  title="Save Favorites"
+                  description="Favorite dishes and kitchens"
+                />
+                <KeyFeature
+                  icon="💳"
+                  title="Secure Payments"
+                  description="Secure payment processing"
+                />
+                <KeyFeature
+                  icon="🎁"
+                  title="Free Meal Sharing"
+                  description="Home kitchens can offer free dishes to share kindness, reduce food waste, and support the community."
+                />
+
+              </div>
             </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <KeyFeature 
-                icon="🏠"
-                title="Share Your Homemade Dishes"
-                description="Share your homemade dishes with nearby neighbors"
-              />
-              <KeyFeature 
-                icon="🔍"
-                title="Browse Local Meals"
-                description="Browse and order local home-cooked meals"
-              />
-              <KeyFeature 
-                icon="👨‍🍳"
-                title="Kitchen Profile"
-                description="Set up your own kitchen profile and menu"
-              />
-              <KeyFeature 
-                icon="💬"
-                title="Real-time Chat"
-                description="Real-time chat with food providers"
-              />
-              <KeyFeature 
-                icon="⭐"
-                title="Ratings & Trust"
-                description="Rate dishes and build community trust"
-              />
-              <KeyFeature 
-                icon="📍"
-                title="Location-Based Discovery"
-                description="Location-based discovery of nearby kitchens"
-              />
-              <KeyFeature 
-                icon="📦"
-                title="Order Tracking"
-                description="Order tracking and delivery options"
-              />
-              <KeyFeature 
-                icon="❤️"
-                title="Save Favorites"
-                description="Favorite dishes and kitchens"
-              />
-              <KeyFeature 
-                icon="💳"
-                title="Secure Payments"
-                description="Secure payment processing"
-              />
-            </div>
-          </div>
+          </section>
         </section>
-       </section>
 
         {/* Features Section */}
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-4 text-gray-900">Why Choose P2PFood?</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Discover the benefits of joining our food sharing community
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              <FeatureCard 
-                emoji="🤝"
-                title="Peer to Peer"
-                description="Connect directly with your neighbors to share delicious homemade food"
-                borderColor="border-red-100"
-                delay="0"
-              />
-              
-              <FeatureCard 
-                emoji="♻️"
-                title="Reduce Waste"
-                description="Help reduce food waste while enjoying variety in your meals"
-                borderColor="border-orange-100"
-                delay="200"
-              />
-              
-              <FeatureCard 
-                emoji="🌍"
-                title="Build Community"
-                description="Strengthen your local community through food sharing"
-                borderColor="border-green-100"
-                delay="400"
-              />
-            </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4 text-gray-900">Why Choose P2PFood?</h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Discover the benefits of joining our food sharing community
+            </p>
           </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <FeatureCard
+              emoji="🤝"
+              title="Peer to Peer"
+              description="Connect directly with your neighbors to share delicious homemade food"
+              borderColor="border-red-100"
+              delay="0"
+            />
+
+            <FeatureCard
+              emoji="♻️"
+              title="Reduce Waste"
+              description="Help reduce food waste while enjoying variety in your meals"
+              borderColor="border-orange-100"
+              delay="200"
+            />
+
+            <FeatureCard
+              emoji="🌍"
+              title="Build Community"
+              description="Strengthen your local community through food sharing"
+              borderColor="border-green-100"
+              delay="400"
+            />
+          </div>
+        </div>
 
         {/* How It Works Section */}
         <section id="how-it-works" className="py-20">
@@ -208,26 +214,26 @@ function App() {
               <h2 className="text-4xl font-bold mb-4 text-gray-900">How It Works</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">Get started in 3 simple steps</p>
             </div>
-            
+
             <div className="grid md:grid-cols-3 gap-12 relative">
               {/* Connecting Line */}
               <div className="hidden md:block absolute top-16 left-1/3 right-1/3 h-1 bg-gradient-to-r from-red-500 via-orange-500 to-green-500 transform -translate-y-1/2"></div>
-              
-              <StepCard 
+
+              <StepCard
                 step={1}
                 title="Sign Up"
                 description="Create your profile and set your food preferences"
                 icon="📱"
               />
-              
-              <StepCard 
+
+              <StepCard
                 step={2}
                 title="Browse & Connect"
                 description="Find food shared by neighbors in your area"
                 icon="🔍"
               />
-              
-              <StepCard 
+
+              <StepCard
                 step={3}
                 title="Share & Enjoy"
                 description="Pick up delicious homemade meals or share your own"
@@ -273,33 +279,40 @@ function App() {
         <section className="py-20 bg-gradient-to-r from-red-50 to-green-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-4 text-gray-900">What Our Users Say</h2>
+              <h2 className="text-4xl font-bold mb-4 text-gray-900">
+                Built with Community in Mind
+              </h2>
+              <p className="text-gray-600 max-w-2xl mx-auto">
+                P2PFood is in its early stage, focused on building a safe, transparent,
+                and meaningful food-sharing experience.
+              </p>
             </div>
-            
+
             <div className="grid md:grid-cols-3 gap-8">
-              <TestimonialCard 
-                name="Sarah M."
-                role="Food Enthusiast"
-                content="P2PFood changed how I eat! I've discovered amazing local dishes and made new friends."
-                avatar="👩‍🍳"
+              <TestimonialCard
+                name="Early Access"
+                role="Beta Phase"
+                content="P2PFood is currently in early access. We’re actively improving the platform based on real user feedback."
+                avatar="🧪"
               />
-              
-              <TestimonialCard 
-                name="John D."
-                role="Environmentalist"
-                content="Reducing food waste has never been this delicious and community-driven!"
-                avatar="👨‍🌾"
+
+              <TestimonialCard
+                name="Our Commitment"
+                role="Core Values"
+                content="We prioritize safety, trust, and transparency from day one."
+                avatar="🛡️"
               />
-              
-              <TestimonialCard 
-                name="Maria L."
-                role="Home Cook"
-                content="Sharing my cooking with neighbors brings me so much joy and appreciation."
-                avatar="👩‍🍳"
+
+              <TestimonialCard
+                name="Our Mission"
+                role="Why We Exist"
+                content="Our mission is to reduce food waste and bring people together through shared meals."
+                avatar="🌱"
               />
             </div>
           </div>
         </section>
+
 
         {/* Final CTA */}
         <section id="download" className="py-20">
@@ -311,7 +324,7 @@ function App() {
                   Download the app today and start sharing delicious moments with your neighbors.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                  <DownloadButton 
+                  <DownloadButton
                     platform="Google Play"
                     icon={
                       <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
@@ -321,8 +334,8 @@ function App() {
                     href="https://play.google.com/store/apps/details?id=com.p2pfood&hl=en"
                     color="from-green-500 to-green-600"
                   />
-                  
-                  <DownloadButton 
+
+                  <DownloadButton
                     platform="App Store"
                     icon={
                       <svg className="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
@@ -345,7 +358,7 @@ function App() {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center gap-3 mb-6">
-              <img src={logo} alt="P2PFood Logo" className="h-12 w-12 rounded-full" />
+                <img src={logo} alt="P2PFood Logo" className="h-12 w-12 rounded-full" />
                 <h1 className="text-3xl font-bold bg-gradient-to-r from-red-400 to-green-400 bg-clip-text text-transparent">
                   P2PFood
                 </h1>
@@ -354,7 +367,7 @@ function App() {
                 Connecting communities through the joy of shared food.
               </p>
             </div>
-            
+
             <div>
               <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
               <ul className="space-y-2">
@@ -363,7 +376,7 @@ function App() {
                 <li><a href="#download" className="text-gray-400 hover:text-white transition-colors">Download</a></li>
               </ul>
             </div>
-            
+
             <div>
               <h3 className="text-lg font-semibold mb-4">Legal</h3>
               <ul className="space-y-2">
@@ -371,13 +384,13 @@ function App() {
                 <li><a href="/terms" className="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
               </ul>
             </div>
-            
+
             <div>
               <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
               <p className="text-gray-400 mb-2">info@softopshub.com</p>
             </div>
           </div>
-          
+
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500">
             <p>&copy; 2026 P2PFood. All rights reserved.</p>
           </div>
@@ -397,10 +410,10 @@ interface DownloadButtonProps {
 
 function DownloadButton({ platform, icon, href, color }: DownloadButtonProps) {
   return (
-    <a 
+    <a
       href={href}
-      target="_blank" 
-      rel="noopener noreferrer" 
+      target="_blank"
+      rel="noopener noreferrer"
       className={`group flex items-center gap-4 px-8 py-4 bg-gradient-to-r ${color} hover:shadow-2xl text-white rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg w-full sm:w-auto`}
     >
       {icon}
