@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import logo from './assets/logo.png';
-import phone1 from './assets/s1.jpg';
+import phone1 from './assets/s5.jpg';
 import phone2 from './assets/s4.png';
 
 
